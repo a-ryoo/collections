@@ -1,4 +1,4 @@
-package lists
+package collections
 
 type List[E any] interface {
 	Add(e ...E) List[E]

@@ -1,4 +1,4 @@
-package lists
+package collections
 
 type Iterator[E any] interface {
 	First()
