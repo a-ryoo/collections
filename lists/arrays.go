@@ -11,8 +11,14 @@ type ArrayList[E any] struct {
 	container []E
 }
 
-func NewArrayList[E any]() List[E] {
-	container := make([]E, 0)
+func NewArrayList[E any](e ...E) List[E] {
+	var container []E
+	if len(e) < 1 {
+		container = make([]E, 0)
+	} else {
+		container = e
+	}
+
 	return &ArrayList[E]{
 		container: container,
 	}
@@ -148,8 +154,14 @@ type MultiArrayList[S, T any] struct {
 	container []S
 }
 
-func NewMultiArrayList[S, T any]() MultiList[S, T] {
-	container := make([]S, 0)
+func NewMultiArrayList[S, T any](src ...S) MultiList[S, T] {
+	var container []S
+	if len(src) < 1 {
+		container = make([]S, 0)
+	} else {
+		container = src
+	}
+
 	return &MultiArrayList[S, T]{
 		container: container,
 	}
