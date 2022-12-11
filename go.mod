@@ -1,3 +1,3 @@
-module github.com/a-ryoo/collections
+module collections
 
 go 1.19
