@@ -1,4 +1,4 @@
-package collections
+package v2
 
 import "reflect"
 
