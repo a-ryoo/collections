@@ -122,7 +122,9 @@ func (a *ArrayList[E]) DeepEquals(col List[E]) bool {
 }
 
 func (a *ArrayList[E]) ForEach(action Action[E]) {
-	a.Iterator().ForEach(action)
+	for _, i := range a.container {
+		action(i)
+	}
 }
 
 func (a *ArrayList[E]) IsEmpty() bool {
