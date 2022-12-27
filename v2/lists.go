@@ -1,4 +1,4 @@
-package v2
+package col
 
 type List[E any] interface {
 	Add(e ...E) List[E]
@@ -7,7 +7,7 @@ type List[E any] interface {
 	Contains(e ...E) bool
 	DeepEquals(col List[E]) bool
 	Equals(col List[E]) bool
-	Filter(pred Predicate[E])
+	Filter(pred Predicate[E]) List[E]
 	ForEach(action Action[E])
 	GetHash() string
 	IsEmpty() bool

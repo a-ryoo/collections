@@ -1,4 +1,4 @@
-package v2
+package col
 
 type Iterator[E any] interface {
 	First()

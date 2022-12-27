@@ -1,4 +1,4 @@
-package v2
+package col
 
 import (
 	"crypto/md5"
@@ -81,7 +81,7 @@ func (a *ArrayList[E]) RemoveIf(pred Predicate[E]) {
 	}
 	a.container = result
 }
-func (a *ArrayList[E]) Filter(pred Predicate[E]) {
+func (a *ArrayList[E]) Filter(pred Predicate[E]) List[E] {
 	var result []E
 	for _, e := range a.container {
 		if pred(e) {
@@ -89,6 +89,8 @@ func (a *ArrayList[E]) Filter(pred Predicate[E]) {
 		}
 	}
 	a.container = result
+
+	return a
 }
 
 func (a *ArrayList[E]) Contains(e ...E) bool {
